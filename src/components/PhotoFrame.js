@@ -7,10 +7,14 @@ function PhotoFrame(props) {
   return (
     <div>
       <Link className="addIcon" to="/AddPhoto">
-        +
+      +
       </Link>
       <div className="photo-grid">
-        {props.PhotoBlock.map((singlePhoto, index) => (
+        {props.PhotoBlock
+          .sort(function(a, b) {
+            return b.id - a.id;
+          })
+          .map((singlePhoto, index) => (
           <Photo
             key={index}
             onRemovePhoto={props.onRemovePhoto}

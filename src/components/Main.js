@@ -10,22 +10,22 @@ class Main extends Component {
     this.state = {
       allPhotos: [
         {
-          id: "0",
+          id: 0,
           description: "beautiful sea",
           imageLink: "https://picsum.photos/800/600?image=14",
         },
         {
-          id: "1",
+          id: 1,
           description: "Coffee cup",
           imageLink: "https://picsum.photos/800/600?image=30",
         },
         {
-          id: "2",
+          id: 2,
           description: "Freedom",
           imageLink: "https://picsum.photos/800/600?image=50",
         },
         {
-          id: "3",
+          id: 3,
           description: "Farm",
           imageLink: "https://picsum.photos/800/600?image=85",
         },
@@ -38,6 +38,12 @@ class Main extends Component {
       allPhotos: state.allPhotos.filter((photo) => photo !== photoRemove),
     }));
   }
+AddPhoto(photoSubmitted){
+  this.setState((state) => ({
+    allPhotos: state.allPhotos.concat([photoSubmitted])
+  }))
+}
+
   render() {
     return (
       <div>
@@ -54,7 +60,12 @@ class Main extends Component {
             </div>
           )}
         />
-        <Route exact path="/AddPhoto" component={AddPhoto} />
+        <Route exact path="/AddPhoto" render={({history}) => (
+          <AddPhoto onAddPhoto={(addedPhoto)=>{
+            this.AddPhoto(addedPhoto)
+            history.push('/')
+          }} />
+        ) }/>
         );
       </div>
     );
