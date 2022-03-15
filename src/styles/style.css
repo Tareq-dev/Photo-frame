@@ -1,0 +1,89 @@
+html {
+  font-size: 10px;
+  font-family: verdana;
+}
+p {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+h3 {
+  font-family: "Grand Hotel", cursive;
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 100;
+  margin: 2rem 0;
+}
+.photo-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.figure {
+  flex-basis: calc(25% - 4rem);
+  border: 1px solid #d3d3d3;
+  padding: 2rem;
+  flex-grow: 1;
+}
+.photo {
+  width: calc(100% + 4rem);
+  margin: -2rem 0rem 0rem -2rem;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+.remove {
+  color: red;
+  font-size: 15px;
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+  flex-basis: 48%;
+  line-height: 2;
+}
+
+.addIcon {
+  margin: 20px auto;
+  display: table;
+  padding: 20px;
+  border: none;
+  font-size: 50px;
+}
+.form {
+  background: white;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 45px;
+  text-align: center;
+}
+.form input {
+  font-family: verdana;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #065784;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #7b8589;
+}
